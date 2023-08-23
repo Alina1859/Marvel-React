@@ -14,16 +14,20 @@
 
 <p align="center">
 
-<img src="./marvel-screen.png" width="80%"></p>
+<p><img src="./marvel-screen.png" width="80%"></p>
 
-The application gains access to the Marvel API and displays favorite heroes on the screen. 
 <img src="./marvel-more.gif.gif" width="80%"></p>
+The application gains access to the Marvel API and displays favorite heroes on the screen. 
+&nbsp;
 
-Also, you can see in which comics they appeared, visit their Homepage, or go to Wikipedia. 
 <img src="./marvel-about.gif.gif" width="80%"></p>
+Also, you can see in which comics they appeared, visit their Homepage, or go to Wikipedia. 
+&nbsp;
 
-When you click the Try button, the application will show you a random superhero.
 <img src="./marvel-random.gif.gif" width="80%"></p>
+When you click the Try button, the application will show you a random superhero.
+
+</p>
 
 ## Technologies in the project
 
