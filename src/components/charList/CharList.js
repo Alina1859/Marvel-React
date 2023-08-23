@@ -87,7 +87,7 @@ class CharList extends Component {
           className="char__item"
           tabIndex={0}
           ref={this.setRef}
-          key={item.id}
+          key={`${item.id }${item.name}`}
           onClick={() => {
             this.props.onCharSelected(item.id);
             this.focusOnItem(i);

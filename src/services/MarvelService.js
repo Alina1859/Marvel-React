@@ -1,7 +1,20 @@
 class MarvelService {
     _apiBase = 'https://gateway.marvel.com:443/v1/public/';
     _apiKey = 'apikey=66e8eb9f1820170f4933afc4b335abfa';
-    _baseOffset = 210;
+    _baseOffset = 0;
+
+  constructor() {
+    this.initializeBaseOffset();
+  }
+
+  async initializeBaseOffset() {
+    try {
+      const charsLength = await this.getAllCharsLength();
+      this._baseOffset = charsLength;
+    } catch (error) {
+      console.error("Error initializing base offset:", error);
+    }
+  }
 
   getResourse = async (url) => {
     let res = await fetch(url);
@@ -13,10 +26,17 @@ class MarvelService {
     return await res.json();
   };
 
+  getAllCharsLength = async () => {
+    const res = await this.getResourse(`${this._apiBase}characters?&${this._apiKey}`);
+    return res.data.total;
+  }
+
+
   getAllCharacters = async(offset = this._baseOffset) => {
     const res = await this.getResourse(`${this._apiBase}characters?limit=9&offset=${offset}&${this._apiKey}`);
     return res.data.results.map(this._transformCharacter);
   };
+
 
   getCharacter = async (id) => {
     const res = await this.getResourse(`${this._apiBase}characters/${id}?${this._apiKey}`);

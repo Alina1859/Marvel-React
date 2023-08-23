@@ -3,7 +3,6 @@ import MarvelService from "../../services/MarvelService";
 import Spinner from "../spinner/Spinner";
 import ErrorMessage from "../errorMessage/ErrorMessage";
 import "./randomChar.scss";
-import thor from "../../resources/img/thor.jpeg";
 import mjolnir from "../../resources/img/mjolnir.png";
 
 class RandomChar extends Component {
@@ -21,7 +20,6 @@ class RandomChar extends Component {
 
   componentDidMount() {
     this.updateChar()
-    // this.timerId = setInterval(this.updateChar, 3000)
   }
 
   componentWillUnmount() {
@@ -99,10 +97,10 @@ const View = ({ char }) => {
         <p className="randomchar__name">{name}</p>
         <p className="randomchar__descr">{description}</p>
         <div className="randomchar__btns">
-          <a href={homepage} className="button button__main">
+          <a href={homepage} target="_blank" className="button button__main" rel="noreferrer">
             <div className="inner">homepage</div>
           </a>
-          <a href={wiki} className="button button__secondary">
+          <a href={wiki} target="_blank" className="button button__secondary" rel="noreferrer">
             <div className="inner">Wiki</div>
           </a>
         </div>
