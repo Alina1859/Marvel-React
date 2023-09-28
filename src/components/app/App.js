@@ -1,55 +1,43 @@
-import { Component } from "react";
-import ErrorBoundary from "../errorBoundary/ErrorBoundary";
+import { lazy, Suspense } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+
 import AppHeader from "../appHeader/AppHeader";
-import RandomChar from "../randomChar/RandomChar";
-import CharList from "../charList/CharList";
-import CharInfo from "../charInfo/CharInfo";
+import Spinner from "../spinner/Spinner";
 
-import decoration from "../../resources/img/vision.png";
-import gitHubIcon from "../../resources/img/github-logo.svg";
+const MainPage = lazy(() => import("../pages/MainPage"));
+const Page404 = lazy(() => import("../pages/Page404"));
+const ComicsPage = lazy(() => import("../pages/ComicsPage"));
+const SingleComicsPage = lazy(() => import('../pages/singleComicsLayout/SingleComicsPage'));
+const SingleCharacterPage = lazy(() => import('../pages/singleCharacterLayout/SingleCharacterPage'));
+const SinglePage = lazy(() => import("../pages/SinglePage"));
 
-
-class App extends Component {
-
-  state = {
-    selectedChar: null
-  }
-
-  onCharSelected = (id) => {
-    this.setState({
-      selectedChar: id
-    })
-  }
-
-  render() {
-    return (
+const App = () => {
+  return (
+    <Router>
       <div className="app">
         <AppHeader />
         <main>
-        <ErrorBoundary>
-          <RandomChar/>
-        </ErrorBoundary>
-          <div className="char__content">
-          <ErrorBoundary>
-            <CharList onCharSelected={this.onCharSelected}/>
-          </ErrorBoundary>
-            <ErrorBoundary>
-              <CharInfo charId={this.state.selectedChar}/>
-            </ErrorBoundary>
-          </div>
-          <a 
-            className="gitHub-logo" 
-            href="https://github.com/Alina1859/Marvel-React" 
-            target="_blank" 
-            rel="noreferrer"><img src={gitHubIcon} 
-            width="130" height="50" 
-            alt="Link on project on Github"/>
-          </a>
-          <img className="bg-decoration" src={decoration} alt="vision" />
+          <Suspense fallback={<Spinner />}>
+            <Routes>
+              <Route path="/" element={<MainPage />} />
+              <Route path="/comics" element={<ComicsPage />} />
+              <Route exact path="/comics/:id" element={
+                <SinglePage 
+                  Component={SingleComicsPage} 
+                  dataType="comics" />}
+                />
+              <Route exact path="/characters/:id" element={
+                <SinglePage
+                  Component={SingleCharacterPage}
+                  dataType="character"/>}
+                />
+              <Route path="*" element={<Page404 />}></Route>
+            </Routes>
+          </Suspense>
         </main>
       </div>
-    );
-  }
-}
+    </Router>
+  );
+};
 
 export default App;
