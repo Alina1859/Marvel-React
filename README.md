@@ -21,7 +21,7 @@ The application gains access to the Marvel API and displays favorite heroes on t
 <img src="/Marvel-Load-More.gif" width="80%"></p> 
 
 Also, you can tap to one of the card and watch, which comics this hero was appeared, visit their Homepage, or go to Wikipedia.
-<img src="./Marvel-Picture.gif" width="80%"></p>
+<img src="./Marvel-Picture.gif" width="90%"></p>
 
 When you click the Try button, the application will show you a random superhero.
 <img src="./Marvel-Random.gif" width="80%"></p>
