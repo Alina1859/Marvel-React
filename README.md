@@ -20,7 +20,7 @@ Pretty easy app on React, so you can have all information about you favorite sup
 The application gains access to the Marvel API and displays favorite heroes on the screen. It use "React.lazy" for optimization, "react-helmet" bible for SEO.
 <img src="/Marvel-Load-More.gif" width="80%"></p> 
 
-Also, you can tap to one of the card and watch, which comics this hero was appeared or visit their Homepage, or go to Wikipedia. 
+Also, you can tap to one of the card and watch, which comics this hero was appeared, visit their Homepage, or go to Wikipedia.
 <img src="./Marvel-Picture.gif" width="80%"></p>
 
 When you click the Try button, the application will show you a random superhero.
