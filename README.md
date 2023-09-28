@@ -15,7 +15,7 @@
 <p align="center">
 
 Pretty easy app on React, so you can have all information about you favorite superhero!
-<p><img src="./Marvel-Screen.png" width="80%"></p>
+<p><img src="./marvel-screen.png" width="80%"></p>
 
 The application gains access to the Marvel API and displays favorite heroes on the screen. It use "React.lazy" for optimization, "react-helmet" bible for SEO.
 <img src="/Marvel-React/Marvel-Load-More.gif" width="80%"></p> 
