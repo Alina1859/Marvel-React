@@ -14,16 +14,28 @@
 
 <p align="center">
 
-<p><img src="./marvel-screen.png" width="80%"></p>
+Pretty easy app on React, so you can have all information about you favorite superhero!
+<p><img src="./Marvel-Screen.png" width="80%"></p>
 
-The application gains access to the Marvel API and displays favorite heroes on the screen. 
-<img src="./marvel-more.gif.gif" width="80%"></p> 
+The application gains access to the Marvel API and displays favorite heroes on the screen. It use "React.lazy" for optimization, "react-helmet" bible for SEO.
+<img src="/Marvel-React/Marvel-Load-More.gif" width="80%"></p> 
 
-Also, you can see in which comics they appeared, visit their Homepage, or go to Wikipedia. 
-<img src="./marvel-about.gif.gif" width="80%"></p>
+Also, you can tap to one of the card and watch, which comics this hero was appeared or visit their Homepage, or go to Wikipedia. 
+<img src="./Marvel-Picture.gif" width="80%"></p>
 
 When you click the Try button, the application will show you a random superhero.
-<img src="./marvel-random.gif.gif" width="80%"></p>
+<img src="./Marvel-Random.gif" width="80%"></p>
+
+You can find in Marvel Base you favourite hero by his name and watch information about him. For the form validation there was used "Formik"
+<img src="./Marvel-Find.gif" width="80%"></p>
+</p>
+
+You can watch comisc from Marvel Base.
+<img src="./Marvel-More-Comics.gif" width="80%"></p>
+</p>
+
+Aaand you can see comics info!
+<img src="./Marvel-Watch-Comics.gif" width="80%"></p>
 </p>
 
 ## Technologies in the project

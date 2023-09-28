@@ -21,7 +21,6 @@ const setContent = (process, Component, newItemLoading) => {
   }
 }
 
-
 const CharList = (props) => {
   const [charList, setCharList] = useState([]);
   const [newItemLoading, setNewItemLoading] = useState(false);
@@ -38,8 +37,8 @@ const CharList = (props) => {
   const onRequest = (offset, initial) => {
     initial ? setNewItemLoading(false) : setNewItemLoading(true);
       getAllCharacters(offset)
-      .then(onCharListLoaded)
-      .then(() => setProcess('confirmed'))
+        .then(onCharListLoaded)
+        .then(() => setProcess('confirmed'))
   };
 
   const onCharListLoaded = (newCharList) => {
@@ -48,7 +47,7 @@ const CharList = (props) => {
       ended = true;
     }
 
-    setCharList((charList) => [...charList, ...newCharList]);
+    setCharList([...charList, ...newCharList]);
     setNewItemLoading((newItemLoading) => false);
     setOffset((offset) => offset + 9);
     setCharEnded((charEnded) => ended);
